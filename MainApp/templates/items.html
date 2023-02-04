@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h3>
+        <ol>
+            {% for item in items %}
+                <a href="{% url 'item' item.id %}">
+                    <li class="item-block">name: {{ item.name }}</li>
+                </a>
+            {% endfor %}
+        </ol>
+        <hr>
+        <a href="{% url 'home' %}">На главную!</a>
+    </h3>
+</body>
+</html>
